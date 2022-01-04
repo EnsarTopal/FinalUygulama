@@ -1,0 +1,54 @@
+﻿@model FinalUygulama.Models.Haber
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Haber</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HaberBaslik)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HaberBaslik)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HaberAciklama)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HaberAciklama)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HaberDetay)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HaberDetay)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HaberResimYolu)
+        </dt>
+        <dd class = "col-sm-10">
+            <img src="@Model.HaberResimYolu" alt="">
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kategori)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kategori)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HaberTarihi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HaberTarihi)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.HaberID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

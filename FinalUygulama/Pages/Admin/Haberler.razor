@@ -1,0 +1,78 @@
+﻿@page "/admin/haber"
+@page "/admin"
+@inherits OwningComponentBase<FinalUygulama.Data.FinalUygulamaContext>
+
+
+<h4>Haberler sayfası</h4>
+
+<table class="table table-sm table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <td />
+            </tr>
+        </thead>
+        <tbody>
+            @if (HaberData?.Count() > 0)
+            {
+    @foreach (Haber h in HaberData)
+    {
+    <tr>
+        <td>@h.HaberID</td>
+        <td>@h.HaberBaslik</td>
+        <td>@h.HaberAciklama</td>
+        <td>@h.HaberTarihi</td>
+        <td>
+            <NavLink class="btn btn-info btn-sm"
+                     href="@GetDetailsUrl(h.HaberID)">
+                Details
+            </NavLink>
+            <NavLink class="btn btn-warning btn-sm"
+                     href="@GetEditUrl(h.HaberID)">
+                Edit
+            </NavLink>
+            <button class="btn btn-danger btn-sm"
+                    @onclick="@(e => DeleteHaber(h))">
+                Delete
+            </button>
+        </td>
+    </tr>
+    } }
+    else
+    {
+    <tr>
+        <td colspan="5" class="text-center">No Products</td>
+    </tr>
+    }
+        </tbody>
+    </table>
+
+<NavLink class="btn btn-primary" href="/admin/haber/create">Create</NavLink>
+
+@code { public FinalUygulama.Data.FinalUygulamaContext Repository => Service;
+
+    public IEnumerable<Haber> HaberData { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await UpdateData();
+    }
+
+    public async Task UpdateData()
+    {
+        HaberData = await Repository.Haber.ToListAsync();
+    }
+
+    public async Task DeleteHaber(Haber h)
+    {
+        Repository.Haber.Remove(h);
+        Repository.SaveChanges();
+        await UpdateData();
+    }
+
+    public string GetDetailsUrl(long id) => $"/admin/habers/details/{id}";
+    public string GetEditUrl(long id) => $"/admin/haber/edit/{id}"; }
+
