@@ -3,8 +3,6 @@
 @inherits OwningComponentBase<FinalUygulama.Data.FinalUygulamaContext>
 
 
-<h3>Create Sayfası</h3>
-
 <style>
     div.validation-message {
         color: rgb(220, 53, 69);
@@ -12,7 +10,7 @@
     }
 </style>
 
-<h3 class="bg-@ThemeColor text-white text-center p-1">@TitleText a Product</h3>
+<h3 class="bg-@ThemeColor text-white text-center p-1">@TitleText News</h3>
 <EditForm Model="Haber" OnValidSubmit="SaveHaber">
     <DataAnnotationsValidator />
     @if (Haber.HaberID != 0)
@@ -34,7 +32,7 @@
     <div class="form-group">
         <label>Detay</label>
         <ValidationMessage For="@(() => Haber.HaberDetay)" />
-        <InputText class="form-control" @bind-Value="Haber.HaberDetay" />
+        <InputTextArea class="form-control" @bind-Value="Haber.HaberDetay" />
     </div>
     <div class="form-group">
         <label>Resim Yolu</label>
@@ -46,13 +44,13 @@
         <ValidationMessage For="@(() => Haber.Kategori)" />
         <InputText class="form-control" @bind-Value="Haber.Kategori" />
     </div>
-    @*<div class="form-group">
+    <div class="form-group">
         <label>Tarih</label>
         <ValidationMessage For="@(() => Haber.HaberTarihi)" />
-        <InputNumber class="form-control" @bind-Value="Haber.HaberTarihi" />
-    </div>*@
-    <button type="submit" class="btn btn-@ThemeColor">Save</button>
-    <NavLink class="btn btn-secondary" href="/admin/haber">Cancel</NavLink>
+        <InputDate class="form-control" @bind-Value="Haber.HaberTarihi" />
+    </div>
+    <button type="submit" class="btn btn-@ThemeColor">Kaydet</button>
+    <NavLink class="btn btn-secondary" href="/admin/haber">Vazgeç</NavLink>
 </EditForm>
 
 @code { public FinalUygulama.Data.FinalUygulamaContext Repository => Service;
@@ -89,4 +87,5 @@
     }
 
     public string ThemeColor => Id == 0 ? "primary" : "warning";
-    public string TitleText => Id == 0 ? "Create" : "Edit"; }
+    public string TitleText => Id == 0 ? "Create" : "Edit";
+    }

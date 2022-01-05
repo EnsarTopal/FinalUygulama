@@ -3,7 +3,10 @@
 @using Microsoft.AspNetCore.Http
 @using Radzen.Blazor
 
-
+<RadzenDialog />
+<RadzenNotification />
+<RadzenTooltip />
+<RadzenContextMenu />
 
 <RadzenHeader>
     <ChildContent>
@@ -15,7 +18,7 @@
                 </RadzenLabel>
             </div>
             <div class="col-7 d-flex align-items-center justify-content-end">
-                <div class="d-none d-md-inline-flex align-items-center">                   
+                <div class="d-none d-md-inline-flex align-items-center">
                     <a class="btn btn-sm btn-primary" href="/account/logout">Log Out</a>
                 </div>
                 @*<RadzenDropDown class="mx-0 mx-lg-3" TValue="string" TextProperty="Text" ValueProperty="Value" Data="@ThemeService.Themes" Value="@ThemeService.CurrentTheme" Change="@ChangeTheme" />*@
@@ -31,19 +34,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 pt-4 pb-5 px-3 px-lg-5">
-                        @Body
-                        <RadzenCard class="mt-5 content-footer">
-                            <div class="row align-items-center">
-                                <div class="col-12 col-lg-7 px-5 py-3 text-center text-lg-left">
-                                    <h2 class="mb-3">Boost your Blazor development with Radzen</h2>
-                                    <p class="mb-2">Radzen is a desktop tool that gives you the power to create line of business applications. Build and launch Blazor apps visually, while we generate clean code for you.</p>
-                                </div>
-                                <div class="col-12 col-lg-5 px-5 text-center text-lg-right">
-                                    <NavLink class="cta-button ml-0 my-2" href="https://www.radzen.com/features/" target="_blank">Learn More</NavLink>
-                                    <NavLink class="cta-button primary my-2" href="https://www.radzen.com/download/" target="_blank">Download Radzen</NavLink>
-                                </div>
-                            </div>
-                        </RadzenCard>                       
+                        @Body                        
                     </div>
                 </div>
             </div>
@@ -53,7 +44,7 @@
 
 
 <RadzenSidebar @ref="@sidebar0" @bind-Expanded="@sidebarExpanded">
-    <ChildContent>       
+    <ChildContent>
         <RadzenPanelMenu>
             <RadzenPanelMenuItem Text="General" Icon="home">
                 <RadzenPanelMenuItem Text="Buttons" Path="buttons" Icon="account_circle"></RadzenPanelMenuItem>
@@ -108,7 +99,4 @@
     void FilterPanelMenu(ChangeEventArgs args)
     {
         var term = args.Value.ToString();
-    } 
-    
-    
-}
+    } }

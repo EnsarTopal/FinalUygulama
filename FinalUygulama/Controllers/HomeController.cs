@@ -24,8 +24,30 @@ namespace FinalUygulama.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Haber.ToListAsync());
+            var sorgu = (from haber in _context.Haber
+                         orderby haber.HaberID descending
+                         select haber).Take(5);
+
+            return View(await sorgu.ToListAsync());
         }
+
+        public async Task<IActionResult> Detay(long? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var haber = await _context.Haber
+                .FirstOrDefaultAsync(m => m.HaberID == id);
+            if (haber == null)
+            {
+                return NotFound();
+            }
+
+            return View(haber);
+        }
+
 
         public IActionResult Privacy()
         {
@@ -37,6 +59,6 @@ namespace FinalUygulama.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        
+
     }
 }

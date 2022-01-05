@@ -8,8 +8,23 @@
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="header-info-left">
                                 <ul>
-                                    <li><img src="~/lib/template/img/icon/header_icon1.png" alt="">34ºc, Sunny </li>
-                                    <li><img src="~/lib/template/img/icon/header_icon1.png" alt="">Tuesday, 18th June, 2019</li>
+                                    <li>
+                                        <!---beterbocekler2.tr.gg kod başlangıc--->
+                                        <script language="JavaScript"><!--
+                                            var now = new Date(); var yr = now.getYear(); var mName = now.getMonth() + 1; var dName = now.getDay() + 1;
+                                            var yr_str = " 19"; // yil 2000 iken, 19 sayisinin ï¿½ikmamasini saglayacak string
+                                            var dayNr = ((now.getDate() < 10) ? "" : "") + now.getDate(); if (dName == 1) Day = "Pazar"; if (dName == 2) Day = "Pazartesi"; if (dName == 3) Day = "Salı"; if (dName == 4) Day = "Çarşamba"; if (dName == 5) Day = "Perşembe"; if (dName == 6) Day = "Cuma HAYIRLI CUMALAR"; if (dName == 7) Day = "Cumartesi"; if (mName == 1) Month = "Ocak"; if (mName == 2) Month = "Şubat"; if (mName == 3) Month = "Mart";
+                                            if (mName == 4) Month = "Nisan"; if (mName == 5) Month = "Mayıs"; if (mName == 6) Month = "Haziran"; if (mName == 7) Month = "Temmuz"; if (mName == 8) Month = "Ağustos"; if (mName == 9) Month = "Eylül";
+                                            if (mName == 10) Month = "Ekim"; if (mName == 11) Month = "Kasım"; if (mName == 12) Month = "Aralık";
+                                            if (yr > 99) {
+                                                yr_str = " ";
+                                                if (yr < 2000) yr += 1900;
+                                            } var todaysDate = (" " + dayNr + " " + Month + yr_str + yr + "" + ", " + Day + ""); document.open(); document.write("<FONT face=Tahoma SIZE=4 color=white>" + todaysDate + "</FONT>");// -->
+                                        </script>  <!---beterbocekler2.tr.gg kod bitişi--->
+                                    </li>
+                                    <li>
+                                     Burayı doldur
+                                    </li>
                                 </ul>
                             </div>
                             <div class="header-info-right">
@@ -29,7 +44,7 @@
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-3 col-md-3">
                             <div class="logo">
-                                <a href="index.html"><img src="~/lib/template/img/logo/logo.png" alt=""></a>
+                                <a asp-action="Index" asp-controller="Home"><img src="~/lib/template/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-9 col-lg-9 col-md-9">
@@ -46,13 +61,13 @@
                         <div class="col-xl-10 col-lg-10 col-md-12 header-flex">
                             <!-- sticky -->
                             <div class="sticky-logo">
-                                <a href="index.html"><img src="~/lib/template/img/logo/logo.png" alt=""></a>
+                                <a  asp-action="Index" asp-controller="Home"><img src="~/lib/template/img/logo/logo.png" alt=""></a>
                             </div>
                             <!-- Main-menu -->
                             <div class="main-menu d-none d-md-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
+                                        <li><a  asp-action="Index" asp-controller="Home">Home</a></li>
                                         <li><a asp-controller="Account" asp-action="Login">Giriş Yap</a></li>
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="latest_news.html">Latest News</a></li>
