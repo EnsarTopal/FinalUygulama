@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Haber>
+<div class="col-lg-4">
+    @foreach (var item in Model)
+    {
+        <div class="trand-right-single d-flex" style="-webkit-line-clamp:3">
+            <div class="trand-right-img">
+                <img style="height: 120px; width: 100px;" src="@item.HaberResimYolu" alt="">
+            </div>
+            <div class="trand-right-cap">
+                <span class="color1">@item.Kategori</span>
+                <h4 class="kısalt"><a asp-action="Detay" asp-route-id="@item.HaberID" asp-controller="Home">@item.HaberBaslik</a></h4>
+            </div>
+        </div>
+    }
+</div>

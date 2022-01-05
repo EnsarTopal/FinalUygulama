@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Haber>
+
+@foreach (var item in Model)
+{
+    <div class="trending-top mb-30">
+        <div class="trend-top-img">
+            <img src="@item.HaberResimYolu" alt="">
+            <div class="trend-top-cap">
+                <span>@item.Kategori</span>
+                <h2><a asp-controller="Home" asp-action="Detay" asp-route-id="@item.HaberID">@item.HaberBaslik</a></h2>
+            </div>
+        </div>
+    </div>
+}
