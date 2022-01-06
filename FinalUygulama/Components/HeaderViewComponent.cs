@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using FinalUygulama.Models;
-
 
 namespace FinalUygulama.Components
 {

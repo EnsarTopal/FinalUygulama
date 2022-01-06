@@ -1,0 +1,156 @@
+﻿@model IEnumerable<Haber>
+
+<style>
+    .kısalt {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+    }
+</style>
+<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div class="whats-news-caption">
+        <div class="row">
+            @{ int count = 0;}
+            @foreach (var item in Model)
+            {
+                if (count < 6)
+                {
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-what-news mb-100">
+                            <div class="what-img">
+                                <img src="@item.HaberResimYolu" alt="">
+                            </div>
+                            <div class="what-cap">
+                                <span class="color4">@item.Kategori</span>
+                                <h4 class="kısalt"><a asp-action="Detay" asp-route-id="@item.HaberID" asp-controller="Home">@item.HaberBaslik</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    count++;
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="whats-news-caption">
+        <div class="row">
+            
+            @foreach (var item in Model)
+            {
+                @if (item.Kategori == "Ekonomi" )
+                {
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-what-news mb-100">
+                            <div class="what-img">
+                                <img src="@item.HaberResimYolu" alt="">
+                            </div>
+                            <div class="what-cap">
+                                <span class="color4">@item.Kategori</span>
+                                <h4 class="kısalt"><a asp-action="Detay" asp-route-id="@item.HaberID" asp-controller="Home">@item.HaberBaslik</a></h4>
+                            </div>
+                        </div>
+                    </div>                   
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <div class="whats-news-caption">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                @if (item.Kategori == "Türkiye Haberleri")
+                {
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-what-news mb-100">
+                            <div class="what-img">
+                                <img src="@item.HaberResimYolu" alt="">
+                            </div>
+                            <div class="what-cap">
+                                <span class="color4">@item.Kategori</span>
+                                <h4 class="kısalt"><a asp-action="Detay" asp-route-id="@item.HaberID" asp-controller="Home">@item.HaberBaslik</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-last-tab">
+    <div class="whats-news-caption">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                @if (item.Kategori == "Dünya Haberleri")
+                {
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-what-news mb-100">
+                            <div class="what-img">
+                                <img src="@item.HaberResimYolu" alt="">
+                            </div>
+                            <div class="what-cap">
+                                <span class="color4">@item.Kategori</span>
+                                <h4 class="kısalt"><a asp-action="Detay" asp-route-id="@item.HaberID" asp-controller="Home">@item.HaberBaslik</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="tab-pane fade" id="nav-nav-Sport" role="tabpanel" aria-labelledby="nav-Sports">
+    <div class="whats-news-caption">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                @if (item.Kategori == "Magazin")
+                {
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-what-news mb-100">
+                            <div class="what-img">
+                                <img src="@item.HaberResimYolu" alt="">
+                            </div>
+                            <div class="what-cap">
+                                <span class="color4">@item.Kategori</span>
+                                <h4 class="kısalt"><a asp-action="Detay" asp-route-id="@item.HaberID" asp-controller="Home">@item.HaberBaslik</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="tab-pane fade" id="nav-techno" role="tabpanel" aria-labelledby="nav-technology">
+    <div class="whats-news-caption">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                @if (item.Kategori == "Spor Haberleri")
+                {
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-what-news mb-100">
+                            <div class="what-img">
+                                <img src="@item.HaberResimYolu" alt="">
+                            </div>
+                            <div class="what-cap">
+                                <span class="color4">@item.Kategori</span>
+                                <h4 class="kısalt"><a asp-action="Detay" asp-route-id="@item.HaberID" asp-controller="Home">@item.HaberBaslik</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

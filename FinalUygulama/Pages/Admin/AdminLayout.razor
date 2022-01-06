@@ -16,13 +16,7 @@
                 </RadzenSidebarToggle>
                 <RadzenLabel Text="Admin Sayfasına Hoşgeldin">
                 </RadzenLabel>
-            </div>
-            <div class="col-7 d-flex align-items-center justify-content-end">
-                <div class="d-none d-md-inline-flex align-items-center">
-                    <a class="btn btn-sm btn-primary" href="/account/logout">Log Out</a>
-                </div>
-                @*<RadzenDropDown class="mx-0 mx-lg-3" TValue="string" TextProperty="Text" ValueProperty="Value" Data="@ThemeService.Themes" Value="@ThemeService.CurrentTheme" Change="@ChangeTheme" />*@
-            </div>
+            </div>          
         </div>
     </ChildContent>
 </RadzenHeader>
@@ -34,7 +28,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 pt-4 pb-5 px-3 px-lg-5">
-                        @Body                        
+                        @Body
                     </div>
                 </div>
             </div>
@@ -46,45 +40,9 @@
 <RadzenSidebar @ref="@sidebar0" @bind-Expanded="@sidebarExpanded">
     <ChildContent>
         <RadzenPanelMenu>
-            <RadzenPanelMenuItem Text="General" Icon="home">
-                <RadzenPanelMenuItem Text="Buttons" Path="buttons" Icon="account_circle"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Menu" Path="menu" Icon="line_weight"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="FileInput" Path="fileinput" Icon="attach_file"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Dialog" Path="dialog" Icon="perm_media"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Notification" Path="notification" Icon="announcement"></RadzenPanelMenuItem>
-            </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Inputs" Icon="payment">
-                <RadzenPanelMenuItem Text="CheckBox" Path="checkbox" Icon="check_circle"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="TextBox" Path="textbox" Icon="input"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="TextArea" Path="textarea" Icon="description"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Password" Path="password" Icon="payment"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Numeric" Path="numeric" Icon="aspect_ratio"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="DatePicker" Path="datepicker" Icon="date_range"></RadzenPanelMenuItem>
-            </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Data" Icon="save">
-                <RadzenPanelMenuItem Text="DataGrid" Path="datagrid" Icon="grid_on"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="DataList" Path="datalist" Icon="list"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="DropDown" Path="dropdown" Icon="dns"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="DropDownDataGrid" Path="dropdown-datagrid" Icon="receipt"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="ListBox" Path="listbox" Icon="view_list"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="TemplateForm" Path="templateform" Icon="line_style"></RadzenPanelMenuItem>
-            </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Containers" Icon="account_box">
-                <RadzenPanelMenuItem Text="Tabs" Path="tabs" Icon="tab"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Panel" Path="panel" Icon="content_paste"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Fieldset" Path="fieldset" Icon="account_balance_wallet"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Card" Path="card" Icon="line_style"></RadzenPanelMenuItem>
-            </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="More">
-                <RadzenPanelMenuItem Text="Item1"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Item2"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="More items">
-                    <RadzenPanelMenuItem Text="More sub items">
-                        <RadzenPanelMenuItem Text="Item1"></RadzenPanelMenuItem>
-                        <RadzenPanelMenuItem Text="Item2"></RadzenPanelMenuItem>
-                    </RadzenPanelMenuItem>
-                </RadzenPanelMenuItem>
-            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="Haberler" Path="Admin/haber" Icon="newspaper"></RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="Profile" Path="#" Icon="person"></RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="Log Out" Path="/account/logout" Icon="logout"></RadzenPanelMenuItem>
         </RadzenPanelMenu>
     </ChildContent>
 </RadzenSidebar>

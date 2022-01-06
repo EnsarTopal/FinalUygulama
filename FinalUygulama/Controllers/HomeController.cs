@@ -37,7 +37,6 @@ namespace FinalUygulama.Controllers
             {
                 return NotFound();
             }
-
             var haber = await _context.Haber
                 .FirstOrDefaultAsync(m => m.HaberID == id);
             if (haber == null)
@@ -46,6 +45,10 @@ namespace FinalUygulama.Controllers
             }
 
             return View(haber);
+        }
+        public IActionResult Contact()
+        {
+            return View();
         }
 
 
