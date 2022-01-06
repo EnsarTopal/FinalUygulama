@@ -10,7 +10,7 @@
     }
 </style>
 
-<h3 class="bg-@ThemeColor text-white text-center p-1">@TitleText News</h3>
+<h3 class="bg-@ThemeColor text-white text-center p-1">Haber @TitleText</h3>
 <EditForm Model="Haber" OnValidSubmit="SaveHaber">
     <DataAnnotationsValidator />
     @if (Haber.HaberID != 0)
@@ -43,12 +43,12 @@
         <label>Kategori</label>
         <ValidationMessage For="@(() => Haber.Kategori)" />
         <InputText class="form-control" @bind-Value="Haber.Kategori" />
-    </div>
-    <div class="form-group">
+    </div>   
+    @*<div class="form-group">
         <label>Tarih</label>
         <ValidationMessage For="@(() => Haber.HaberTarihi)" />
-        <InputDate class="form-control" @bind-Value="Haber.HaberTarihi" />
-    </div>
+        <InputDate   class="form-control" @bind-Value="Haber.HaberTarihi" />
+    </div>*@
     <button type="submit" class="btn btn-@ThemeColor">Kaydet</button>
     <NavLink class="btn btn-secondary" href="/admin/haber">Vazgeç</NavLink>
 </EditForm>
@@ -68,13 +68,15 @@
         if (Id != 0)
         {
             Haber = Repository.Haber.FirstOrDefault(p => p.HaberID == Id);
+
         }
     }
 
     public void SaveHaber()
     {
         if (Id == 0)
-        {
+        {            
+            Haber.HaberTarihi = DateTime.Now.ToShortDateString();
             Repository.Add(Haber);
             Repository.SaveChanges();
         }
@@ -87,5 +89,5 @@
     }
 
     public string ThemeColor => Id == 0 ? "primary" : "warning";
-    public string TitleText => Id == 0 ? "Create" : "Edit";
+    public string TitleText => Id == 0 ? "Oluştur" : "Düzenle";
     }
